@@ -13153,7 +13153,7 @@ exports.default = {
   props: ["heleData"],
   methods: {
     resetHeleCount: function resetHeleCount() {
-      firebase.database().ref("hele").set(0);
+      firebase.database().ref("heleCount").set(0);
     },
     toggleHeleCount: function toggleHeleCount(e) {
       if (e.target.checked) {
@@ -13188,7 +13188,7 @@ exports.default = {
       }
     },
     superIncrementHele: function superIncrementHele() {
-      var databaseRef = firebase.database().ref("hele");
+      var databaseRef = firebase.database().ref("heleCount");
       databaseRef.transaction(function (searches) {
         if (searches !== undefined) {
           searches = searches + 1;
@@ -13197,7 +13197,7 @@ exports.default = {
       });
     },
     superDecrementHele: function superDecrementHele() {
-      var databaseRef = firebase.database().ref("hele");
+      var databaseRef = firebase.database().ref("heleCount");
       databaseRef.transaction(function (searches) {
         if (searches !== undefined) {
           if (searches > 0) {
@@ -13252,7 +13252,7 @@ if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
   if (!module.hot.data) {
     hotAPI.createRecord("data-v-3842dc64", __vue__options__)
   } else {
-    hotAPI.rerender("data-v-3842dc64", __vue__options__)
+    hotAPI.reload("data-v-3842dc64", __vue__options__)
   }
 })()}
 },{"vue":83,"vue-hot-reload-api":81,"vueify/lib/insert-css":84}],86:[function(require,module,exports){
@@ -13297,7 +13297,7 @@ exports.default = {
     getFirebaseData: function getFirebaseData() {
       var _this = this;
 
-      firebase.database().ref("hele").on("value", function (snapshot) {
+      firebase.database().ref("heleCount").on("value", function (snapshot) {
         if (snapshot.exists()) {
           _this.$set(_this.heleData, "heleCount", snapshot.val());
         }
@@ -13326,7 +13326,7 @@ if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
   if (!module.hot.data) {
     hotAPI.createRecord("data-v-53e3883b", __vue__options__)
   } else {
-    hotAPI.rerender("data-v-53e3883b", __vue__options__)
+    hotAPI.reload("data-v-53e3883b", __vue__options__)
   }
 })()}
 },{"../lib/Bubble.js":89,"vue":83,"vue-hot-reload-api":81,"vueify/lib/insert-css":84}],87:[function(require,module,exports){
@@ -13348,8 +13348,6 @@ var _axios2 = _interopRequireDefault(_axios);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var omedetouPath = ["./sound/omedetou/kagaya.mp3", "./sound/omedetou/nakamura.mp3", "./sound/omedetou/tsutsumi01.mp3", "./sound/omedetou/onuma.mp3", "./sound/omedetou/ikebe.mp3", "./sound/omedetou/saru.mp3"];
-var selectedOmedetou = void 0;
 var omedetouSounds = [];
 var heleSound = void 0;
 window.AudioContext = window.AudioContext || window.webkitAudioContext;
@@ -13465,7 +13463,7 @@ exports.default = {
               }
             }
 
-            var databaseRef = firebase.database().ref("hele");
+            var databaseRef = firebase.database().ref("heleCount");
             databaseRef.transaction(function (searches) {
               if (searches !== undefined) {
                 searches = searches + 1;
@@ -13502,7 +13500,7 @@ exports.default = {
               }
             }
 
-            var _databaseRef = firebase.database().ref("hele");
+            var _databaseRef = firebase.database().ref("heleCount");
             _databaseRef.transaction(function (searches) {
               if (searches !== undefined) {
                 searches = searches + 1;
@@ -13572,9 +13570,8 @@ exports.default = {
     }
   },
   mounted: function mounted() {
-    selectedOmedetou = this.random(omedetouPath, 2);
     this.getHeleSound("./sound/hele.mp3");
-    this.getOmedetouSounds(selectedOmedetou);
+
     if (navigator.userAgent.indexOf('Android') > 0) {
       var _iteratorNormalCompletion5 = true;
       var _didIteratorError5 = false;
@@ -13621,7 +13618,7 @@ if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
   if (!module.hot.data) {
     hotAPI.createRecord("data-v-cb5d04ce", __vue__options__)
   } else {
-    hotAPI.rerender("data-v-cb5d04ce", __vue__options__)
+    hotAPI.reload("data-v-cb5d04ce", __vue__options__)
   }
 })()}
 },{"axios":1,"babel-runtime/core-js/get-iterator":26,"vue":83,"vue-hot-reload-api":81,"vueify/lib/insert-css":84}],88:[function(require,module,exports){
@@ -13636,6 +13633,10 @@ Object.defineProperty(exports, "__esModule", {
 var _HeleButton = require("./HeleButton.vue");
 
 var _HeleButton2 = _interopRequireDefault(_HeleButton);
+
+var _Counter = require("./Counter.vue");
+
+var _Counter2 = _interopRequireDefault(_Counter);
 
 var _Admin = require("./Admin.vue");
 
@@ -13655,7 +13656,7 @@ exports.default = {
         ownHeleCount: 0,
         heleCount: "---",
         isActive: false,
-        isCongrats: false,
+
         defaultMax: 999,
         limit: {
           isLimited: false,
@@ -13670,7 +13671,7 @@ exports.default = {
     getFirebaseData: function getFirebaseData() {
       var _this = this;
 
-      firebase.database().ref("hele").on("value", function (snapshot) {
+      firebase.database().ref("heleCount").on("value", function (snapshot) {
         if (snapshot.exists()) {
           _this.$set(_this.heleData, "heleCount", snapshot.val());
         }
@@ -13730,10 +13731,10 @@ if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
   if (!module.hot.data) {
     hotAPI.createRecord("data-v-36f3639a", __vue__options__)
   } else {
-    hotAPI.rerender("data-v-36f3639a", __vue__options__)
+    hotAPI.reload("data-v-36f3639a", __vue__options__)
   }
 })()}
-},{"./Admin.vue":85,"./HeleButton.vue":87,"vue":83,"vue-hot-reload-api":81,"vueify/lib/insert-css":84}],89:[function(require,module,exports){
+},{"./Admin.vue":85,"./Counter.vue":86,"./HeleButton.vue":87,"vue":83,"vue-hot-reload-api":81,"vueify/lib/insert-css":84}],89:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -13881,10 +13882,10 @@ var router = new _vueRouter2.default({
         }, {
             path: 'admin.html',
             component: _Admin2.default
+        }, {
+            path: 'counter.html',
+            component: _Counter2.default
         }]
-    }, {
-        path: '/counter.html',
-        component: _Counter2.default
     }]
 });
 

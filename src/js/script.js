@@ -21,12 +21,12 @@ const router = new VueRouter({
                 {
                     path: 'admin.html',
                     component: Admin
+                },
+                {
+                    path: 'counter.html',
+                    component: Counter
                 }
             ]
-        },
-        {
-            path: '/counter.html',
-            component: Counter
         }
     ]
 });

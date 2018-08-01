@@ -1,5 +1,6 @@
 {
   "projects": {
-    "default": "helebutton-e9463"
+    "default": "helebutton-e9463",
+    "staging": "helebutton-6cf30"
   }
 }

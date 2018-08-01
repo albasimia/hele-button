@@ -101,7 +101,7 @@ export default {
     getFirebaseData() {
       firebase
         .database()
-        .ref("hele")
+        .ref("heleCount")
         .on("value", snapshot => {
           if (snapshot.exists()) {
             this.$set(this.heleData, "heleCount", snapshot.val());

@@ -184,7 +184,7 @@ export default {
     resetHeleCount() {
       firebase
         .database()
-        .ref("hele")
+        .ref("heleCount")
         .set(0);
     },
     toggleHeleCount(e) {
@@ -244,7 +244,7 @@ export default {
       }
     },
     superIncrementHele() {
-      const databaseRef = firebase.database().ref(`hele`);
+      const databaseRef = firebase.database().ref(`heleCount`);
       databaseRef.transaction(function(searches) {
         if (searches !== undefined) {
           searches = searches + 1;
@@ -253,7 +253,7 @@ export default {
       });
     },
     superDecrementHele() {
-      const databaseRef = firebase.database().ref(`hele`);
+      const databaseRef = firebase.database().ref(`heleCount`);
       databaseRef.transaction(function(searches) {
         if (searches !== undefined) {
           if(searches > 0){

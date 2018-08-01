@@ -14,6 +14,7 @@
 
 <script>
 import HeleButton from "./HeleButton.vue";
+import Counter from "./Counter.vue";
 import Admin from "./Admin.vue";
 
 export default {
@@ -28,7 +29,7 @@ export default {
         ownHeleCount: 0,
         heleCount: "---",
         isActive: false,
-        isCongrats: false,
+        // isCongrats: false,
         defaultMax: 999,
         limit: {
           isLimited: false,
@@ -42,7 +43,7 @@ export default {
     getFirebaseData() {
       firebase
         .database()
-        .ref("hele")
+        .ref("heleCount")
         .on("value", snapshot => {
           if (snapshot.exists()) {
             this.$set(this.heleData, "heleCount", snapshot.val());

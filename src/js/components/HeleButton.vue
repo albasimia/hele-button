@@ -223,15 +223,15 @@
 <script>
   import axios from "axios";
   
-  const omedetouPath = [
-    "./sound/omedetou/kagaya.mp3",
-    "./sound/omedetou/nakamura.mp3",
-    "./sound/omedetou/tsutsumi01.mp3",
-    "./sound/omedetou/onuma.mp3",
-    "./sound/omedetou/ikebe.mp3",
-    "./sound/omedetou/saru.mp3"
-  ];
-  let selectedOmedetou;
+  // const omedetouPath = [
+  //   "./sound/omedetou/kagaya.mp3",
+  //   "./sound/omedetou/nakamura.mp3",
+  //   "./sound/omedetou/tsutsumi01.mp3",
+  //   "./sound/omedetou/onuma.mp3",
+  //   "./sound/omedetou/ikebe.mp3",
+  //   "./sound/omedetou/saru.mp3"
+  // ];
+  // let selectedOmedetou;
   const omedetouSounds = [];
   let heleSound;
   window.AudioContext = window.AudioContext || window.webkitAudioContext;
@@ -311,7 +311,7 @@
               for (let val of pushAnimationDom) {
                 val.setAttribute("data-push", "true");
               }
-              const databaseRef = firebase.database().ref(`hele`);
+              const databaseRef = firebase.database().ref(`heleCount`);
               databaseRef.transaction(function(searches) {
                 if (searches !== undefined) {
                   searches = searches + 1;
@@ -326,7 +326,7 @@
               for (let val of pushAnimationDom) {
                 val.setAttribute("data-push", "true");
               }
-              const databaseRef = firebase.database().ref(`hele`);
+              const databaseRef = firebase.database().ref(`heleCount`);
               databaseRef.transaction(function(searches) {
                 if (searches !== undefined) {
                   searches = searches + 1;
@@ -375,9 +375,9 @@
       }
     },
     mounted: function() {
-      selectedOmedetou = this.random(omedetouPath, 2);
+      // selectedOmedetou = this.random(omedetouPath, 2);
       this.getHeleSound("./sound/hele.mp3");
-      this.getOmedetouSounds(selectedOmedetou);
+      // this.getOmedetouSounds(selectedOmedetou);
       if (navigator.userAgent.indexOf('Android') > 0) {
         for (let dom of document.querySelectorAll('.hele_own_count_num')) {
           dom.classList.add('android');
