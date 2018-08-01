@@ -1,4 +1,5 @@
 <template lang="pug">
+<<<<<<< HEAD
 .root
   router-view(:heleData='this.heleData')
 </template>
@@ -104,4 +105,22 @@ document.documentElement.addEventListener(
   },
   false
 );
+=======
+.root {{ message }}
+</template>
+
+<style lang="scss" scoped>
+@import 'config';
+</style>
+
+<script>
+export default {
+  name: 'root',
+  data () {
+    return {
+      message: 'hello, world.'
+    }
+  }
+};
+>>>>>>> master
 </script>

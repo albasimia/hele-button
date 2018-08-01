@@ -22,8 +22,12 @@ html(lang="ja")
     meta(name="format-detection" content="telephone=no")
 
     // smartphone meta
+<<<<<<< HEAD
     //- meta(name="viewport", content="width=750")
     meta(name="viewport", content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, shrink-to-fit=no")
+=======
+    meta(name="viewport", content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no")
+>>>>>>> master
     if meta.webclipicon_url
       link(rel="apple-touch-icon", href=meta.webclipicon_url)
 
@@ -69,6 +73,7 @@ html(lang="ja")
 
     // javascript
     block javascript-block
+<<<<<<< HEAD
       script(src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js")
       script.
         // Initialize Firebase
@@ -81,4 +86,6 @@ html(lang="ja")
           messagingSenderId: "1063217460932"
         };
         firebase.initializeApp(config);
+=======
+>>>>>>> master
       script(src=basePath + "/js/script.js?v="+versions["script.js"])
