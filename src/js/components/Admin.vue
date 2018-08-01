@@ -13,7 +13,7 @@
       .button_count.button_count--up(type='submit' value='▲' v-on:click='incrementLimit')
       .button_count.button_count--down(type='submit' value='▼' v-on:click='decrementLimit')
     .div.div4
-      input.toggle_button.toggle_button--congrats(type="checkbox" data-off-label="MEDETAKUNAI" data-on-label="MEDETAI" v-model='heleData.isCongrats' v-on:change="toggleCongrats($event)")
+      // input.toggle_button.toggle_button--congrats(type="checkbox" data-off-label="MEDETAKUNAI" data-on-label="MEDETAI" v-model='heleData.isCongrats' v-on:change="toggleCongrats($event)")
       input.toggle_button.toggle_button--limit(type="checkbox" data-off-label="UNLIMITED" data-on-label="LIMITED" v-model='heleData.limit.isLimited' v-on:change='toggleHeleLimit($event)')
     .div.div5
       input.toggle_button.toggle_button--stop(type="checkbox" data-off-label="STOP" data-on-label="RUN" v-model='heleData.isActive' v-on:change='toggleHeleCount($event)')
@@ -102,7 +102,7 @@
   }
   &--limit,
   &--congrats {
-    width: 50%;
+    width: 100%;
   }
 }
 

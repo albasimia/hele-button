@@ -1,16 +1,9 @@
 # このサイト全体のタイトル
-<<<<<<< HEAD
 site_name: へぇカウンター
 
 # meta description（og:description・twitter:descriptionでも使用）
 description: へぇカウンター
-=======
-site_name: kayac-html5-starter
 
-# meta description（og:description・twitter:descriptionでも使用）
-description: kayac-html5-starter web page.
-
->>>>>>> master
 # meta keywords
 keywords: []
 

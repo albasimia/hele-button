@@ -49,12 +49,9 @@
     "plugins": [
       "transform-runtime"
     ]
-<<<<<<< HEAD
   },
   "dependencies": {
     "axios": "^0.17.1",
     "vue-router": "^3.0.1"
-=======
->>>>>>> master
   }
 }

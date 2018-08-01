@@ -1,5 +1,4 @@
 import Vue from 'vue';
-<<<<<<< HEAD
 import VueRouter from 'vue-router';
 
 import Root from './components/Root.vue';
@@ -37,12 +36,3 @@ new Vue({
     router: router,
     render: (h) => h(Root)
 })
-=======
-
-import Root from './components/Root.vue';
-
-new Vue({
-    el: document.getElementById('root'),
-    render: (h) => h(Root)
-});
->>>>>>> master
